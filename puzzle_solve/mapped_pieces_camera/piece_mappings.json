@@ -1,0 +1,115 @@
+{
+  "total_pieces": 10,
+  "mapped_pieces": 6,
+  "reference_pieces": 6,
+  "mappings": [
+    {
+      "piece_index": 1,
+      "row": 2,
+      "col": 1,
+      "match_score": 0.48597538471221924,
+      "bbox": [
+        49,
+        536,
+        257,
+        173
+      ],
+      "center": [
+        177,
+        622
+      ],
+      "area": 34732.0,
+      "output_file": "piece_r2_c1_score0.49.png"
+    },
+    {
+      "piece_index": 2,
+      "row": 0,
+      "col": 1,
+      "match_score": 0.7944567203521729,
+      "bbox": [
+        379,
+        522,
+        225,
+        219
+      ],
+      "center": [
+        491,
+        631
+      ],
+      "area": 38343.0,
+      "output_file": "piece_r0_c1_score0.79.png"
+    },
+    {
+      "piece_index": 3,
+      "row": 0,
+      "col": 0,
+      "match_score": 0.8316454887390137,
+      "bbox": [
+        81,
+        299,
+        256,
+        172
+      ],
+      "center": [
+        209,
+        385
+      ],
+      "area": 36873.0,
+      "output_file": "piece_r0_c0_score0.83.png"
+    },
+    {
+      "piece_index": 4,
+      "row": 2,
+      "col": 0,
+      "match_score": 0.7008092999458313,
+      "bbox": [
+        379,
+        280,
+        221,
+        214
+      ],
+      "center": [
+        489,
+        387
+      ],
+      "area": 36596.0,
+      "output_file": "piece_r2_c0_score0.70.png"
+    },
+    {
+      "piece_index": 6,
+      "row": 1,
+      "col": 0,
+      "match_score": 0.7071060538291931,
+      "bbox": [
+        61,
+        42,
+        220,
+        204
+      ],
+      "center": [
+        171,
+        144
+      ],
+      "area": 32458.5,
+      "output_file": "piece_r1_c0_score0.71.png"
+    },
+    {
+      "piece_index": 7,
+      "row": 1,
+      "col": 1,
+      "match_score": 0.6012662053108215,
+      "bbox": [
+        350,
+        23,
+        246,
+        240
+      ],
+      "center": [
+        473,
+        143
+      ],
+      "area": 39117.5,
+      "output_file": "piece_r1_c1_score0.60.png"
+    }
+  ]
+}

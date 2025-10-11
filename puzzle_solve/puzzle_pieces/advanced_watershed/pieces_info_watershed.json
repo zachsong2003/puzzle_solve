@@ -1,0 +1,142 @@
+[
+  {
+    "index": 0,
+    "filename": "piece_000.png",
+    "position": {
+      "x": 525,
+      "y": 40
+    },
+    "size": {
+      "width": 192,
+      "height": 234
+    },
+    "area": 25003.0,
+    "perimeter": 836.2119674682617,
+    "solidity": 0.7695835513558436,
+    "num_corners": 20,
+    "center": {
+      "x": 621,
+      "y": 157
+    }
+  },
+  {
+    "index": 1,
+    "filename": "piece_001.png",
+    "position": {
+      "x": 112,
+      "y": 76
+    },
+    "size": {
+      "width": 225,
+      "height": 282
+    },
+    "area": 44220.0,
+    "perimeter": 976.630856513977,
+    "solidity": 0.8657517082052587,
+    "num_corners": 20,
+    "center": {
+      "x": 224,
+      "y": 217
+    }
+  },
+  {
+    "index": 2,
+    "filename": "piece_002.png",
+    "position": {
+      "x": 52,
+      "y": 436
+    },
+    "size": {
+      "width": 320,
+      "height": 219
+    },
+    "area": 41362.0,
+    "perimeter": 1223.056926727295,
+    "solidity": 0.7469840352524741,
+    "num_corners": 20,
+    "center": {
+      "x": 212,
+      "y": 545
+    }
+  },
+  {
+    "index": 3,
+    "filename": "piece_003.png",
+    "position": {
+      "x": 451,
+      "y": 386
+    },
+    "size": {
+      "width": 127,
+      "height": 131
+    },
+    "area": 6562.5,
+    "perimeter": 510.78087615966797,
+    "solidity": 0.6788207913110939,
+    "num_corners": 20,
+    "center": {
+      "x": 514,
+      "y": 451
+    }
+  },
+  {
+    "index": 4,
+    "filename": "piece_004.png",
+    "position": {
+      "x": 450,
+      "y": 466
+    },
+    "size": {
+      "width": 150,
+      "height": 201
+    },
+    "area": 15337.5,
+    "perimeter": 776.2615928649902,
+    "solidity": 0.7647909446757586,
+    "num_corners": 20,
+    "center": {
+      "x": 525,
+      "y": 566
+    }
+  },
+  {
+    "index": 5,
+    "filename": "piece_005.png",
+    "position": {
+      "x": 420,
+      "y": 727
+    },
+    "size": {
+      "width": 224,
+      "height": 230
+    },
+    "area": 40725.0,
+    "perimeter": 915.6686868667603,
+    "solidity": 0.8828789767492277,
+    "num_corners": 20,
+    "center": {
+      "x": 532,
+      "y": 842
+    }
+  },
+  {
+    "index": 6,
+    "filename": "piece_006.png",
+    "position": {
+      "x": 76,
+      "y": 700
+    },
+    "size": {
+      "width": 197,
+      "height": 279
+    },
+    "area": 32672.5,
+    "perimeter": 1130.013479232788,
+    "solidity": 0.7597372398558307,
+    "num_corners": 20,
+    "center": {
+      "x": 174,
+      "y": 839
+    }
+  }
+]

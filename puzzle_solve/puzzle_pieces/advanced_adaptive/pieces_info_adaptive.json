@@ -1,0 +1,482 @@
+[
+  {
+    "index": 0,
+    "filename": "piece_000.png",
+    "position": {
+      "x": 268,
+      "y": 857
+    },
+    "size": {
+      "width": 7,
+      "height": 5
+    },
+    "area": 12.0,
+    "perimeter": 16.14213526248932,
+    "solidity": 0.8571428571428571,
+    "num_corners": 1,
+    "center": {
+      "x": 271,
+      "y": 859
+    }
+  },
+  {
+    "index": 1,
+    "filename": "piece_001.png",
+    "position": {
+      "x": 637,
+      "y": 845
+    },
+    "size": {
+      "width": 4,
+      "height": 6
+    },
+    "area": 4.0,
+    "perimeter": 12.485281109809875,
+    "solidity": 0.7272727272727273,
+    "num_corners": 1,
+    "center": {
+      "x": 639,
+      "y": 848
+    }
+  },
+  {
+    "index": 2,
+    "filename": "piece_002.png",
+    "position": {
+      "x": 264,
+      "y": 826
+    },
+    "size": {
+      "width": 3,
+      "height": 4
+    },
+    "area": 4.0,
+    "perimeter": 8.828427076339722,
+    "solidity": 0.8888888888888888,
+    "num_corners": 1,
+    "center": {
+      "x": 265,
+      "y": 828
+    }
+  },
+  {
+    "index": 3,
+    "filename": "piece_003.png",
+    "position": {
+      "x": 280,
+      "y": 823
+    },
+    "size": {
+      "width": 4,
+      "height": 4
+    },
+    "area": 6.0,
+    "perimeter": 9.656854152679443,
+    "solidity": 0.9230769230769231,
+    "num_corners": 1,
+    "center": {
+      "x": 282,
+      "y": 825
+    }
+  },
+  {
+    "index": 4,
+    "filename": "piece_004.png",
+    "position": {
+      "x": 270,
+      "y": 822
+    },
+    "size": {
+      "width": 4,
+      "height": 6
+    },
+    "area": 9.0,
+    "perimeter": 13.656854152679443,
+    "solidity": 0.8571428571428571,
+    "num_corners": 1,
+    "center": {
+      "x": 272,
+      "y": 825
+    }
+  },
+  {
+    "index": 5,
+    "filename": "piece_005.png",
+    "position": {
+      "x": 320,
+      "y": 820
+    },
+    "size": {
+      "width": 5,
+      "height": 6
+    },
+    "area": 9.5,
+    "perimeter": 15.071067571640015,
+    "solidity": 0.7916666666666666,
+    "num_corners": 1,
+    "center": {
+      "x": 322,
+      "y": 823
+    }
+  },
+  {
+    "index": 6,
+    "filename": "piece_006.png",
+    "position": {
+      "x": 644,
+      "y": 806
+    },
+    "size": {
+      "width": 7,
+      "height": 9
+    },
+    "area": 5.0,
+    "perimeter": 20.97056257724762,
+    "solidity": 0.6666666666666666,
+    "num_corners": 2,
+    "center": {
+      "x": 647,
+      "y": 810
+    }
+  },
+  {
+    "index": 7,
+    "filename": "piece_007.png",
+    "position": {
+      "x": 302,
+      "y": 806
+    },
+    "size": {
+      "width": 4,
+      "height": 4
+    },
+    "area": 4.0,
+    "perimeter": 9.656854152679443,
+    "solidity": 0.8,
+    "num_corners": 1,
+    "center": {
+      "x": 304,
+      "y": 808
+    }
+  },
+  {
+    "index": 8,
+    "filename": "piece_008.png",
+    "position": {
+      "x": 332,
+      "y": 805
+    },
+    "size": {
+      "width": 5,
+      "height": 4
+    },
+    "area": 4.5,
+    "perimeter": 11.071067690849304,
+    "solidity": 0.8181818181818182,
+    "num_corners": 1,
+    "center": {
+      "x": 334,
+      "y": 807
+    }
+  },
+  {
+    "index": 9,
+    "filename": "piece_009.png",
+    "position": {
+      "x": 269,
+      "y": 779
+    },
+    "size": {
+      "width": 4,
+      "height": 6
+    },
+    "area": 11.5,
+    "perimeter": 14.242640614509583,
+    "solidity": 0.9583333333333334,
+    "num_corners": 1,
+    "center": {
+      "x": 271,
+      "y": 782
+    }
+  },
+  {
+    "index": 10,
+    "filename": "piece_010.png",
+    "position": {
+      "x": 305,
+      "y": 775
+    },
+    "size": {
+      "width": 6,
+      "height": 6
+    },
+    "area": 11.0,
+    "perimeter": 15.313708186149597,
+    "solidity": 0.8148148148148148,
+    "num_corners": 1,
+    "center": {
+      "x": 308,
+      "y": 778
+    }
+  },
+  {
+    "index": 11,
+    "filename": "piece_011.png",
+    "position": {
+      "x": 299,
+      "y": 774
+    },
+    "size": {
+      "width": 4,
+      "height": 5
+    },
+    "area": 8.5,
+    "perimeter": 12.242640614509583,
+    "solidity": 0.9444444444444444,
+    "num_corners": 1,
+    "center": {
+      "x": 301,
+      "y": 776
+    }
+  },
+  {
+    "index": 12,
+    "filename": "piece_012.png",
+    "position": {
+      "x": 166,
+      "y": 336
+    },
+    "size": {
+      "width": 4,
+      "height": 5
+    },
+    "area": 3.5,
+    "perimeter": 11.899494767189026,
+    "solidity": 0.7,
+    "num_corners": 1,
+    "center": {
+      "x": 168,
+      "y": 338
+    }
+  },
+  {
+    "index": 13,
+    "filename": "piece_013.png",
+    "position": {
+      "x": 168,
+      "y": 300
+    },
+    "size": {
+      "width": 5,
+      "height": 4
+    },
+    "area": 8.5,
+    "perimeter": 14.242640614509583,
+    "solidity": 0.7727272727272727,
+    "num_corners": 1,
+    "center": {
+      "x": 170,
+      "y": 302
+    }
+  },
+  {
+    "index": 14,
+    "filename": "piece_014.png",
+    "position": {
+      "x": 80,
+      "y": 284
+    },
+    "size": {
+      "width": 5,
+      "height": 3
+    },
+    "area": 6.5,
+    "perimeter": 11.41421353816986,
+    "solidity": 0.9285714285714286,
+    "num_corners": 1,
+    "center": {
+      "x": 82,
+      "y": 285
+    }
+  },
+  {
+    "index": 15,
+    "filename": "piece_015.png",
+    "position": {
+      "x": 125,
+      "y": 278
+    },
+    "size": {
+      "width": 6,
+      "height": 4
+    },
+    "area": 8.5,
+    "perimeter": 15.071067690849304,
+    "solidity": 0.7391304347826086,
+    "num_corners": 1,
+    "center": {
+      "x": 128,
+      "y": 280
+    }
+  },
+  {
+    "index": 16,
+    "filename": "piece_016.png",
+    "position": {
+      "x": 110,
+      "y": 271
+    },
+    "size": {
+      "width": 7,
+      "height": 8
+    },
+    "area": 9.5,
+    "perimeter": 19.55634903907776,
+    "solidity": 0.9047619047619048,
+    "num_corners": 1,
+    "center": {
+      "x": 113,
+      "y": 275
+    }
+  },
+  {
+    "index": 17,
+    "filename": "piece_017.png",
+    "position": {
+      "x": 116,
+      "y": 267
+    },
+    "size": {
+      "width": 5,
+      "height": 4
+    },
+    "area": 8.0,
+    "perimeter": 11.656854152679443,
+    "solidity": 0.8888888888888888,
+    "num_corners": 1,
+    "center": {
+      "x": 118,
+      "y": 269
+    }
+  },
+  {
+    "index": 18,
+    "filename": "piece_018.png",
+    "position": {
+      "x": 144,
+      "y": 266
+    },
+    "size": {
+      "width": 6,
+      "height": 5
+    },
+    "area": 10.0,
+    "perimeter": 14.485281229019165,
+    "solidity": 0.8333333333333334,
+    "num_corners": 1,
+    "center": {
+      "x": 147,
+      "y": 268
+    }
+  },
+  {
+    "index": 19,
+    "filename": "piece_019.png",
+    "position": {
+      "x": 110,
+      "y": 261
+    },
+    "size": {
+      "width": 5,
+      "height": 4
+    },
+    "area": 7.0,
+    "perimeter": 11.656854152679443,
+    "solidity": 0.9333333333333333,
+    "num_corners": 1,
+    "center": {
+      "x": 112,
+      "y": 263
+    }
+  },
+  {
+    "index": 20,
+    "filename": "piece_020.png",
+    "position": {
+      "x": 139,
+      "y": 258
+    },
+    "size": {
+      "width": 6,
+      "height": 3
+    },
+    "area": 3.0,
+    "perimeter": 11.656854152679443,
+    "solidity": 0.6666666666666666,
+    "num_corners": 1,
+    "center": {
+      "x": 142,
+      "y": 259
+    }
+  },
+  {
+    "index": 21,
+    "filename": "piece_021.png",
+    "position": {
+      "x": 94,
+      "y": 258
+    },
+    "size": {
+      "width": 4,
+      "height": 5
+    },
+    "area": 6.0,
+    "perimeter": 12.485281229019165,
+    "solidity": 0.75,
+    "num_corners": 1,
+    "center": {
+      "x": 96,
+      "y": 260
+    }
+  },
+  {
+    "index": 22,
+    "filename": "piece_022.png",
+    "position": {
+      "x": 150,
+      "y": 252
+    },
+    "size": {
+      "width": 8,
+      "height": 4
+    },
+    "area": 6.0,
+    "perimeter": 16.485281229019165,
+    "solidity": 0.7058823529411765,
+    "num_corners": 1,
+    "center": {
+      "x": 154,
+      "y": 254
+    }
+  },
+  {
+    "index": 23,
+    "filename": "piece_023.png",
+    "position": {
+      "x": 485,
+      "y": 47
+    },
+    "size": {
+      "width": 6,
+      "height": 5
+    },
+    "area": 12.0,
+    "perimeter": 15.656854033470154,
+    "solidity": 0.8888888888888888,
+    "num_corners": 1,
+    "center": {
+      "x": 488,
+      "y": 49
+    }
+  }
+]

@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Jigsaw Solver (OpenAI)</title>
+    <style>
+      body { font-family: sans-serif; margin: 20px; }
+      .row { display: flex; gap: 20px; flex-wrap: wrap; }
+      .panel { border: 1px solid #ccc; padding: 12px; border-radius: 8px; }
+      canvas { background: #f7f7f7; border: 1px dashed #aaa; width: 480px; height: 480px; }
+      .controls { margin-top: 12px; display: flex; gap: 10px; align-items: center; }
+      #status { margin-left: 10px; color: #555; }
+      #dropZone {
+        width: 480px; height: 480px; display: flex; align-items: center; justify-content: center;
+        color: #777; text-align: center; cursor: pointer; user-select: none;
+      }
+      .hint { color: #777; font-size: 0.9em; }
+    </style>
+  </head>
+  <body>
+    <h1>Jigsaw Solver (OpenAI)</h1>
+    <p class="hint">
+      Paste (Ctrl/Cmd+V) or drag-and-drop a jigsaw puzzle image into the left canvas. Click “Solve”.
+    </p>
+
+    <div class="row">
+      <div class="panel">
+        <h3>Input (paste or drop)</h3>
+        <div id="dropZone">
+          <canvas id="inputCanvas" width="1024" height="1024"></canvas>
+        </div>
+        <div class="controls">
+          <button id="clearBtn">Clear</button>
+          <input type="file" id="fileInput" accept="image/*" />
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Output (solved)</h3>
+        <canvas id="outputCanvas" width="1024" height="1024"></canvas>
+        <div class="controls">
+          <button id="downloadBtn">Download</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <label for="sizeSelect">Output size</label>
+      <select id="sizeSelect">
+        <option value="512x512">512 x 512</option>
+        <option value="768x768">768 x 768</option>
+        <option value="1024x1024" selected>1024 x 1024</option>
+      </select>
+      <label style="margin-left: 10px;">
+        <input type="checkbox" id="useReferenceCheck"/>
+        Use enhanced prompt
+      </label>
+      <button id="solveBtn">Solve</button>
+      <span id="status"></span>
+    </div>
+
+    <script>
+      const inputCanvas = document.getElementById('inputCanvas');
+      const inputCtx = inputCanvas.getContext('2d');
+      const outputCanvas = document.getElementById('outputCanvas');
+      const outputCtx = outputCanvas.getContext('2d');
+      const dropZone = document.getElementById('dropZone');
+      const fileInput = document.getElementById('fileInput');
+      const clearBtn = document.getElementById('clearBtn');
+      const solveBtn = document.getElementById('solveBtn');
+      const downloadBtn = document.getElementById('downloadBtn');
+      const sizeSelect = document.getElementById('sizeSelect');
+      const useReferenceCheck = document.getElementById('useReferenceCheck');
+      const statusEl = document.getElementById('status');
+
+      // Helper: draw an image to fit canvas while preserving aspect ratio
+      function drawImageFit(img, canvas, ctx) {
+        const cw = canvas.width, ch = canvas.height;
+        ctx.clearRect(0, 0, cw, ch);
+        const iw = img.width, ih = img.height;
+        const scale = Math.min(cw / iw, ch / ih);
+        const w = iw * scale;
+        const h = ih * scale;
+        const x = (cw - w) / 2;
+        const y = (ch - h) / 2;
+        ctx.drawImage(img, 0, 0, iw, ih, x, y, w, h);
+      }
+
+      function setStatus(msg) {
+        statusEl.textContent = msg || '';
+      }
+
+      function loadImageFromBlob(blob) {
+        return new Promise((resolve, reject) => {
+          const url = URL.createObjectURL(blob);
+          const img = new Image();
+          img.onload = () => { URL.revokeObjectURL(url); resolve(img); };
+          img.onerror = reject;
+          img.src = url;
+        });
+      }
+
+      async function handleFile(file) {
+        if (!file) return;
+        try {
+          const img = await loadImageFromBlob(file);
+          drawImageFit(img, inputCanvas, inputCtx);
+        } catch (e) {
+          alert('Failed to load image: ' + e.message);
+        }
+      }
+
+      // Paste support
+      window.addEventListener('paste', async (e) => {
+        const items = e.clipboardData?.items || [];
+        for (const item of items) {
+          if (item.type.startsWith('image/')) {
+            const file = item.getAsFile();
+            await handleFile(file);
+            e.preventDefault();
+            return;
+          }
+        }
+      });
+
+      // Drag and drop support
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+      });
+      dropZone.addEventListener('drop', async (e) => {
+        e.preventDefault();
+        const file = e.dataTransfer.files?.[0];
+        await handleFile(file);
+      });
+
+      // File input
+      fileInput.addEventListener('change', async (e) => {
+        const file = e.target.files?.[0];
+        await handleFile(file);
+      });
+
+      // Clear input canvas
+      clearBtn.addEventListener('click', () => {
+        inputCtx.clearRect(0, 0, inputCanvas.width, inputCanvas.height);
+      });
+
+      // Solve button: send canvas PNG to backend
+      solveBtn.addEventListener('click', () => {
+        inputCanvas.toBlob(async (blob) => {
+          if (!blob) {
+            alert('No image found on the input canvas.');
+            return;
+          }
+          setStatus('Solving… this can take ~10–30s');
+          solveBtn.disabled = true;
+
+          const form = new FormData();
+          // Name the file so the backend can set extension
+          form.append('image', new File([blob], 'puzzle.png', { type: 'image/png' }));
+          form.append('size', sizeSelect.value);
+          form.append('use_reference', useReferenceCheck.checked ? 'true' : 'false');
+
+          try {
+            const res = await fetch('http://127.0.0.1:8000/solve', {
+              method: 'POST',
+              body: form,
+            });
+            const data = await res.json();
+            if (!res.ok) {
+              throw new Error(data?.error || 'Server error');
+            }
+            const b64 = data.image_b64;
+            const outImg = new Image();
+            outImg.onload = () => {
+              drawImageFit(outImg, outputCanvas, outputCtx);
+              setStatus('Done');
+              solveBtn.disabled = false;
+            };
+            outImg.onerror = (e) => {
+              setStatus('Failed to render output');
+              solveBtn.disabled = false;
+            };
+            outImg.src = `data:image/png;base64,${b64}`;
+          } catch (err) {
+            setStatus('');
+            solveBtn.disabled = false;
+            alert('Error: ' + err.message);
+          }
+        }, 'image/png', 0.95);
+      });
+
+      // Download solved image
+      downloadBtn.addEventListener('click', () => {
+        const a = document.createElement('a');
+        a.download = 'solved.png';
+        a.href = outputCanvas.toDataURL('image/png');
+        a.click();
+      });
+    </script>
+  </body>
+</html>

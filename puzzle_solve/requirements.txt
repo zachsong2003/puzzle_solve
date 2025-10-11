@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+openai
+python-multipart
+opencv-python
+requests
+pillow
+numpy
+scipy
+scikit-learn
+scikit-image
+matplotlib
