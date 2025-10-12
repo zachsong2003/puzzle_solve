@@ -512,7 +512,7 @@ def main(args):
     reference_dir = get_reference_directory()
     
     # Set output directory
-    # output_dir = "puzzle_solve/mapped_pieces"
+    # output_dir = "mapped_pieces"
     output_dir = args.output_dir
     
     print("\n" + "=" * 70)
@@ -637,7 +637,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output_dir", default="puzzle_solve/mapped_pieces", required=False)
+    parser.add_argument("--output_dir", default="mapped_pieces", required=False)
     args = parser.parse_args()
     print(args)
     os.makedirs(args.output_dir, exist_ok=True)

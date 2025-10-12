@@ -53,7 +53,7 @@ class PuzzlePiecePositionMapper:
             except (IndexError, ValueError) as e:
                 print(f"Could not parse position from {filename}: {e}")
     
-    def extract_pieces_from_scrambled(self) -> List[Dict]:
+    def extract_pieces_from_scrambled(self, output_dir) -> List[Dict]:
         """Extract individual pieces from the scrambled image using edge detection."""
         gray = cv2.cvtColor(self.scrambled_img, cv2.COLOR_BGR2GRAY)
         
@@ -125,7 +125,7 @@ class PuzzlePiecePositionMapper:
         print(f"Extracted {len(pieces)} pieces from scrambled image using edge detection")
         
         # Save debug images for inspection
-        debug_dir = Path("puzzle_solve/mapped_pieces/debug")
+        debug_dir = Path(f"{output_dir}/debug")
         debug_dir.mkdir(parents=True, exist_ok=True)
         cv2.imwrite(str(debug_dir / "edges.jpg"), edges)
         cv2.imwrite(str(debug_dir / "dilated.jpg"), dilated)
@@ -205,7 +205,7 @@ class PuzzlePiecePositionMapper:
         
         return combined_score
     
-    def map_all_pieces(self, output_dir: str = "puzzle_solve/mapped_pieces"):
+    def map_all_pieces(self, output_dir: str = "mapped_pieces"):
         """
         Map all extracted pieces to their row/col positions.
         """
@@ -213,7 +213,7 @@ class PuzzlePiecePositionMapper:
         output_path.mkdir(parents=True, exist_ok=True)
         
         # Extract pieces from scrambled image
-        extracted_pieces = self.extract_pieces_from_scrambled()
+        extracted_pieces = self.extract_pieces_from_scrambled(output_dir=output_dir)
         
         if not extracted_pieces:
             print("No pieces extracted from scrambled image")
@@ -382,7 +382,7 @@ def main():
     # Paths
     reference_dir = "terracotta_black_bg2"
     scrambled_image = "terracotta_black_bg2/terracotta_army_pieces.png"
-    output_dir = "puzzle_solve/mapped_pieces"
+    output_dir = "mapped_pieces"
     
     print("=" * 60)
     print("PUZZLE PIECE POSITION MAPPING")

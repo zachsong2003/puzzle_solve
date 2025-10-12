@@ -362,7 +362,7 @@ def main():
     Main function to run the advanced puzzle piece extraction.
     """
     image_path = "terracotta_black_bg2/terracotta_army_pieces.png"
-    output_base = "puzzle_solve/puzzle_pieces"
+    output_base = "puzzle_pieces"
     
     print("Advanced Puzzle Piece Extraction")
     print("=" * 50)
@@ -385,7 +385,7 @@ def main():
             print(f"Average piece area: {summary['average_piece_area']:.2f} pixels²")
         
         print("\n" + "=" * 50)
-        print("Extraction complete! Check the results in puzzle_solve/puzzle_pieces/")
+        print("Extraction complete! Check the results in puzzle_pieces/")
         print("Each method folder contains:")
         print("  - Individual piece images (with transparency)")
         print("  - Solid piece images (without transparency)")

@@ -41,7 +41,7 @@ def main():
     if not choice:
         choice = "6"
     
-    output_base = "puzzle_solve/puzzle_pieces"
+    output_base = "puzzle_pieces"
     
     try:
         if choice == "1":

@@ -10,7 +10,7 @@ class PuzzleReconstructor:
     Reconstructs puzzle by connecting pieces based on their convex/concave edges.
     """
     
-    def __init__(self, mapped_pieces_dir: str = "puzzle_solve/mapped_pieces"):
+    def __init__(self, mapped_pieces_dir: str = "mapped_pieces"):
         self.mapped_pieces_dir = Path(mapped_pieces_dir)
         self.pieces_data = {}
         self.piece_images = {}
@@ -486,7 +486,7 @@ def main():
     
     try:
         # Create reconstructor
-        reconstructor = PuzzleReconstructor("puzzle_solve/mapped_pieces")
+        reconstructor = PuzzleReconstructor("mapped_pieces")
         
         # Create edge-matched reconstruction
         print("\n1. Creating edge-matched reconstruction...")

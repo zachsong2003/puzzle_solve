@@ -237,7 +237,7 @@ if __name__ == "__main__":
     image_path = "terracotta_black_bg2/terracotta_army_pieces.png"
     
     # Output directory in the puzzle_solve folder
-    output_base = "puzzle_solve/puzzle_pieces"
+    output_base = "puzzle_pieces"
     
     print("Starting puzzle piece extraction...")
     print("=" * 50)

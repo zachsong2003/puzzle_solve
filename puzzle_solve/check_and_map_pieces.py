@@ -82,7 +82,7 @@ def main():
         
         try:
             mapper = PuzzlePiecePositionMapper(reference_dir, scrambled_image)
-            mapping_info = mapper.map_all_pieces("puzzle_solve/mapped_pieces")
+            mapping_info = mapper.map_all_pieces("mapped_pieces")
             
             if mapping_info and mapping_info['mapped_pieces'] > 0:
                 print("\n✓ Mapping completed successfully!")
@@ -112,16 +112,16 @@ def main():
             
             # Method 1: Basic extraction
             print("\n1. Basic threshold method...")
-            extract_puzzle_pieces(scrambled_image, "puzzle_solve/puzzle_pieces/basic_threshold")
+            extract_puzzle_pieces(scrambled_image, "puzzle_pieces/basic_threshold")
             
             # Method 2: Advanced extraction
             print("\n2. Advanced adaptive method...")
             extractor = AdvancedPuzzlePieceExtractor(scrambled_image)
-            summary = extractor.extract_pieces("adaptive", "puzzle_solve/puzzle_pieces/advanced_adaptive")
+            summary = extractor.extract_pieces("adaptive", "puzzle_pieces/advanced_adaptive")
             print(f"   Extracted {summary['total_pieces']} pieces")
             
             print("\n✓ Extraction completed!")
-            print("Check the results in puzzle_solve/puzzle_pieces/")
+            print("Check the results in puzzle_pieces/")
     else:
         print("⚠ Cannot proceed without the scrambled image.")
 
