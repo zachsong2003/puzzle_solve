@@ -5,23 +5,66 @@ import json
 from typing import Dict, List, Tuple, Optional
 import os
 
+import cv2
+import numpy as np
+from pathlib import Path
+import torch
+from ultralytics import YOLO
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from typing import List, Tuple, Dict
+import argparse
+from PIL import Image
+
 class PuzzlePiecePositionMapper:
     """
     Maps extracted puzzle pieces to their correct row/col positions by comparing
     with reference images (row*_col*.png).
     """
     
-    def __init__(self, reference_dir: str, scrambled_image_path: str):
-        self.reference_dir = Path(reference_dir)
+    def __init__(self, reference_dir: str, scrambled_image_path: str, model_path: str):
+        # self.reference_dir = Path(reference_dir)
         self.scrambled_image_path = scrambled_image_path
-        self.reference_pieces = {}
+        # self.reference_pieces = {}
         self.scrambled_img = cv2.imread(scrambled_image_path)
         
         if self.scrambled_img is None:
             raise ValueError(f"Could not load scrambled image from {scrambled_image_path}")
         
         # Load reference pieces
-        self._load_reference_pieces()
+        # self._load_reference_pieces()
+
+        self.model = YOLO(model_path)
+        self.conf_threshold = 0.5
+        
+        # Class names for puzzle pieces
+        self.class_pos = {
+            # 0: 'row0_col0',
+            # 1: 'row0_col1',
+            # 2: 'row1_col0',
+            # 3: 'row1_col1',
+            # 4: 'row2_col0',
+            # 5: 'row2_col1'
+            0: (0, 0),
+            1: (0, 1),
+            2: (1, 0),
+            3: (1, 1),
+            4: (2, 0),
+            5: (2, 1)
+        }
+        
+        # Colors for visualization (BGR format for OpenCV)
+        self.colors = [
+            (255, 0, 0),    # Blue
+            (0, 255, 0),    # Green
+            (0, 0, 255),    # Red
+            (255, 255, 0),  # Cyan
+            (255, 0, 255),  # Magenta
+            (0, 255, 255)   # Yellow
+        ]
+        
+        print(f"Model loaded from: {model_path}")
+        print(f"Confidence threshold: {self.conf_threshold}")
         
     def _load_reference_pieces(self):
         """Load all reference pieces with row/col positions."""
@@ -219,9 +262,9 @@ class PuzzlePiecePositionMapper:
             print("No pieces extracted from scrambled image")
             return
         
-        if not self.reference_pieces:
-            print("No reference pieces loaded")
-            return
+        # if not self.reference_pieces:
+        #     print("No reference pieces loaded")
+        #     return
         
         # Create mapping
         piece_mappings = []
@@ -233,14 +276,33 @@ class PuzzlePiecePositionMapper:
                 continue
             best_match_pos = None
             best_score = -1
+
+            piece_img = piece['image']
+            results = self.model(piece_img, conf=self.conf_threshold)
+            for r in results:
+                boxes = r.boxes
+                if boxes is not None:
+                    for box in boxes:
+                        # Get box coordinates
+                        x1, y1, x2, y2 = box.xyxy[0].tolist()
+                        # Get class and confidence
+                        cls = int(box.cls[0])
+                        conf = float(box.conf[0])
+                        if conf >= 0.5:
+                            print(f"conf >= 0.5: {conf}")
+                            best_score = conf
+                            best_match_pos = self.class_pos[cls]                            
+                            break
+                        else:
+                            print(f"conf < 0.5: {conf}") 
             
             # Compare with each reference piece
-            for (row, col), reference in self.reference_pieces.items():
-                score = self.match_piece_to_position(piece, reference)
+            # for (row, col), reference in self.reference_pieces.items():
+                # score = self.match_piece_to_position(piece, reference)
                 
-                if score > best_score:
-                    best_score = score
-                    best_match_pos = (row, col)
+                # if score > best_score:
+                #     best_score = score
+                #     best_match_pos = (row, col)
             
             if best_match_pos:
                 row, col = best_match_pos
@@ -293,7 +355,7 @@ class PuzzlePiecePositionMapper:
         mapping_info = {
             'total_pieces': len(extracted_pieces),
             'mapped_pieces': len(piece_mappings),
-            'reference_pieces': len(self.reference_pieces),
+            # 'reference_pieces': len(self.reference_pieces),
             'mappings': piece_mappings
         }
         
@@ -402,7 +464,7 @@ def main():
             print("=" * 60)
             print(f"Total pieces extracted: {mapping_info['total_pieces']}")
             print(f"Successfully mapped: {mapping_info['mapped_pieces']}")
-            print(f"Reference pieces available: {mapping_info['reference_pieces']}")
+            # print(f"Reference pieces available: {mapping_info['reference_pieces']}")
             
             # Show confidence statistics
             if mapping_info['mappings']:

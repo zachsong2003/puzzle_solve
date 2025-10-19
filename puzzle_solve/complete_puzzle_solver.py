@@ -534,7 +534,7 @@ def main(args):
         print("STEP 1: EXTRACTING AND MAPPING PIECES")
         print("-" * 50)
         
-        mapper = PuzzlePiecePositionMapper(reference_dir, scrambled_image)
+        mapper = PuzzlePiecePositionMapper(reference_dir, scrambled_image, model_path="model_yolo.pt")
         mapping_info = mapper.map_all_pieces(output_dir)
         
         if not mapping_info or mapping_info['mapped_pieces'] == 0:
@@ -597,7 +597,7 @@ def main(args):
             print("-" * 50)
             print(f"Total pieces in scrambled image: {mapping_info['total_pieces']}")
             print(f"Successfully mapped: {mapping_info['mapped_pieces']}")
-            print(f"Reference pieces available: {mapping_info['reference_pieces']}")
+            # print(f"Reference pieces available: {mapping_info['reference_pieces']}")
             print(f"\nMatching confidence:")
             print(f"  Average score: {np.mean(scores):.3f}")
             print(f"  Min score: {np.min(scores):.3f}")
