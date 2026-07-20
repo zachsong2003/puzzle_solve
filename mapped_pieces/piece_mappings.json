@@ -1,0 +1,115 @@
+{
+  "total_pieces": 6,
+  "mapped_pieces": 6,
+  "reference_pieces": 6,
+  "mappings": [
+    {
+      "piece_index": 0,
+      "row": 0,
+      "col": 0,
+      "match_score": 0.9748743176460266,
+      "bbox": [
+        414,
+        724,
+        323,
+        237
+      ],
+      "center": [
+        575,
+        842
+      ],
+      "area": 62279.5,
+      "output_file": "piece_r0_c0_score0.97.png"
+    },
+    {
+      "piece_index": 1,
+      "row": 1,
+      "col": 0,
+      "match_score": 1.1474277973175049,
+      "bbox": [
+        73,
+        706,
+        276,
+        283
+      ],
+      "center": [
+        211,
+        847
+      ],
+      "area": 55553.5,
+      "output_file": "piece_r1_c0_score1.15.png"
+    },
+    {
+      "piece_index": 2,
+      "row": 2,
+      "col": 1,
+      "match_score": 0.67250657081604,
+      "bbox": [
+        47,
+        432,
+        329,
+        237
+      ],
+      "center": [
+        211,
+        550
+      ],
+      "area": 60658.0,
+      "output_file": "piece_r2_c1_score0.67.png"
+    },
+    {
+      "piece_index": 3,
+      "row": 2,
+      "col": 0,
+      "match_score": 0.948172926902771,
+      "bbox": [
+        447,
+        381,
+        275,
+        290
+      ],
+      "center": [
+        584,
+        526
+      ],
+      "area": 63469.0,
+      "output_file": "piece_r2_c0_score0.95.png"
+    },
+    {
+      "piece_index": 4,
+      "row": 0,
+      "col": 1,
+      "match_score": 1.0682306289672852,
+      "bbox": [
+        62,
+        71,
+        279,
+        299
+      ],
+      "center": [
+        201,
+        220
+      ],
+      "area": 62759.0,
+      "output_file": "piece_r0_c1_score1.07.png"
+    },
+    {
+      "piece_index": 5,
+      "row": 1,
+      "col": 1,
+      "match_score": 0.8781856298446655,
+      "bbox": [
+        381,
+        37,
+        340,
+        304
+      ],
+      "center": [
+        551,
+        189
+      ],
+      "area": 70236.0,
+      "output_file": "piece_r1_c1_score0.88.png"
+    }
+  ]
+}

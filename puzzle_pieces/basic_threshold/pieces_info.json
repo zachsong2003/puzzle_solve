@@ -1,0 +1,282 @@
+[
+  {
+    "index": 0,
+    "filename": "piece_000.png",
+    "position": [
+      203,
+      908
+    ],
+    "size": [
+      136,
+      78
+    ],
+    "area": 2065.0,
+    "perimeter": 922.2741652727127
+  },
+  {
+    "index": 1,
+    "filename": "piece_001.png",
+    "position": [
+      624,
+      890
+    ],
+    "size": [
+      63,
+      59
+    ],
+    "area": 1524.0,
+    "perimeter": 336.16652047634125
+  },
+  {
+    "index": 2,
+    "filename": "piece_002.png",
+    "position": [
+      417,
+      726
+    ],
+    "size": [
+      327,
+      230
+    ],
+    "area": 5858.0,
+    "perimeter": 2579.6854128837585
+  },
+  {
+    "index": 3,
+    "filename": "piece_003.png",
+    "position": [
+      76,
+      700
+    ],
+    "size": [
+      269,
+      280
+    ],
+    "area": 5422.0,
+    "perimeter": 2647.994067668915
+  },
+  {
+    "index": 4,
+    "filename": "piece_004.png",
+    "position": [
+      517,
+      512
+    ],
+    "size": [
+      201,
+      157
+    ],
+    "area": 2543.5,
+    "perimeter": 1302.6244515180588
+  },
+  {
+    "index": 5,
+    "filename": "piece_005.png",
+    "position": [
+      628,
+      492
+    ],
+    "size": [
+      86,
+      48
+    ],
+    "area": 520.0,
+    "perimeter": 288.16652059555054
+  },
+  {
+    "index": 6,
+    "filename": "piece_006.png",
+    "position": [
+      574,
+      439
+    ],
+    "size": [
+      146,
+      68
+    ],
+    "area": 904.0,
+    "perimeter": 491.53910398483276
+  },
+  {
+    "index": 7,
+    "filename": "piece_007.png",
+    "position": [
+      44,
+      434
+    ],
+    "size": [
+      329,
+      232
+    ],
+    "area": 27491.5,
+    "perimeter": 2959.4082835912704
+  },
+  {
+    "index": 8,
+    "filename": "piece_008.png",
+    "position": [
+      449,
+      423
+    ],
+    "size": [
+      93,
+      245
+    ],
+    "area": 1858.0,
+    "perimeter": 830.9949476718903
+  },
+  {
+    "index": 9,
+    "filename": "piece_009.png",
+    "position": [
+      506,
+      411
+    ],
+    "size": [
+      88,
+      111
+    ],
+    "area": 769.5,
+    "perimeter": 329.11983847618103
+  },
+  {
+    "index": 10,
+    "filename": "piece_010.png",
+    "position": [
+      516,
+      383
+    ],
+    "size": [
+      122,
+      46
+    ],
+    "area": 1039.0,
+    "perimeter": 414.24978029727936
+  },
+  {
+    "index": 11,
+    "filename": "piece_011.png",
+    "position": [
+      131,
+      333
+    ],
+    "size": [
+      93,
+      33
+    ],
+    "area": 645.0,
+    "perimeter": 321.6812388896942
+  },
+  {
+    "index": 12,
+    "filename": "piece_012.png",
+    "position": [
+      517,
+      277
+    ],
+    "size": [
+      133,
+      66
+    ],
+    "area": 1207.0,
+    "perimeter": 619.1025928258896
+  },
+  {
+    "index": 13,
+    "filename": "piece_013.png",
+    "position": [
+      488,
+      230
+    ],
+    "size": [
+      119,
+      45
+    ],
+    "area": 527.5,
+    "perimeter": 330.00714015960693
+  },
+  {
+    "index": 14,
+    "filename": "piece_014.png",
+    "position": [
+      64,
+      218
+    ],
+    "size": [
+      121,
+      120
+    ],
+    "area": 1587.0,
+    "perimeter": 707.1614675521851
+  },
+  {
+    "index": 15,
+    "filename": "piece_015.png",
+    "position": [
+      383,
+      126
+    ],
+    "size": [
+      111,
+      86
+    ],
+    "area": 1101.5,
+    "perimeter": 512.5512965917587
+  },
+  {
+    "index": 16,
+    "filename": "piece_016.png",
+    "position": [
+      445,
+      108
+    ],
+    "size": [
+      60,
+      169
+    ],
+    "area": 1190.5,
+    "perimeter": 642.0904000997543
+  },
+  {
+    "index": 17,
+    "filename": "piece_017.png",
+    "position": [
+      515,
+      86
+    ],
+    "size": [
+      122,
+      53
+    ],
+    "area": 857.0,
+    "perimeter": 329.48022878170013
+  },
+  {
+    "index": 18,
+    "filename": "piece_018.png",
+    "position": [
+      94,
+      74
+    ],
+    "size": [
+      244,
+      285
+    ],
+    "area": 44984.5,
+    "perimeter": 1115.487369298935
+  },
+  {
+    "index": 19,
+    "filename": "piece_019.png",
+    "position": [
+      598,
+      39
+    ],
+    "size": [
+      120,
+      236
+    ],
+    "area": 1788.0,
+    "perimeter": 995.622364282608
+  }
+]
